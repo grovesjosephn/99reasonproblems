@@ -30,4 +30,4 @@ let length = l => {
 let reverse_list = l => List.fold_left((a, c) => [c, ...a], [], l);
 
 let compare_lists = (f, l1, l2) =>
-  List.fold_left2((a, e1, e2) => f(e1, e2), false, l1, l2);
+  List.fold_left2((a, e1, e2) => a ? f(e1, e2) : a, true, l1, l2);
